@@ -27,4 +27,4 @@ jobs:
     # Schritt 3: Die eigentlichen Tests starten
     - name: Mathematische Tests ausführen
       run: |
-        python -m unittest test_math.py
+        python -m unittest -v test_math.py

@@ -6,7 +6,7 @@ print("hello world!")
 
 def add(a, b):
     """Addiert zwei Zahlen."""
-    return a + b
+    return a + b+1
 
 def subtract(a, b):
     """Subtrahiert b von a."""

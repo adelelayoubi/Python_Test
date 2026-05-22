@@ -1,0 +1,30 @@
+# .github/workflows/ci.yml
+name: Python CI Pipeline
+
+# Wann soll die Pipeline starten?
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build-and-test:
+    # Die virtuelle Umgebung, auf der die Tests laufen
+    runs-on: ubuntu-latest
+
+    steps:
+    # Schritt 1: Den Code aus dem GitHub-Repository auf den Server auschecken
+    - name: Code auschecken
+      uses: actions/checkout@v4
+
+    # Schritt 2: Python auf der virtuellen Maschine installieren
+    - name: Python einrichten
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    # Schritt 3: Die eigentlichen Tests starten
+    - name: Mathematische Tests ausführen
+      run: |
+        python -m unittest test_math.py

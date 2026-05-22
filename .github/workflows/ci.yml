@@ -32,7 +32,7 @@ jobs:
     - name: Anwendung bauen und Syntax prüfen (Build)
       run: |
         # Prüft die Datei auf Syntaxfehler ohne sie komplett auszuführen
-        python -m py_compile main.py math_functions.py
+        python -m py_compile main.py Test.py
         # Simuliert den Start der App. Wenn main() abstürzt, schlägt der Build fehl!
         python main.py
     # Schritt 3: Die eigentlichen Tests starten
